@@ -6,8 +6,10 @@
   },
   "scripts": {
     "setup": "eth-sdk -p ./.lib/eth-sdk",
-    "test": "jest --runInBand --watch",
-    "apply": "rimraf build && tsc && node build/.lib/scripts/apply.js"
+    "test": "forge test --fork-url $RPC_URL -vvvv",
+    "updateCalls": "rimraf build && tsc && node build/.lib/scripts/updateCalls.js",
+    "apply": "rimraf build && tsc && node build/.lib/scripts/apply.js",
+    "manager_noon_mainnet": "yarn apply manager_noon_mainnet eth:0xf2BeE2B441ACF54204c25086792Cc94a04193089"
   },
   "dependencies": {
     "@gnosis-guild/eth-sdk": "^0.3.7",

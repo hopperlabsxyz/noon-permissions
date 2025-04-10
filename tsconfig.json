@@ -12,10 +12,24 @@
     "sourceMap": false,
     "strict": true,
     "target": "es2022",
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["ES2023"],
-    "types": ["jest"]
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "ES2023"
+    ],
+    "types": [
+      "jest"
+    ]
   },
-  "include": ["roles/**/*", "contracts.ts", ".lib/**/*"],
-  "exclude": ["node_modules", "build"]
+  "include": [
+    "roles/**/*",
+    "contracts.ts",
+    ".lib/**/*",
+    "lib/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
 }
