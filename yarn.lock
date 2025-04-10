@@ -3349,9 +3349,9 @@ zodiac-roles-sdk@^2.21.1:
     zodiac-roles-deployments "^2.4.0"
 
 zodiac-roles-sdk@^2.21.2:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/zodiac-roles-sdk/-/zodiac-roles-sdk-2.22.0.tgz#db4a19f3496d8f628ddf544d9c3551aede974578"
-  integrity sha512-q15slDHVwWYGplETBre7W3AGfnkLfcww1Hq6uTArZgjjSCM8ywQ/ECeUeCT+ljoryFuf/vUsqF02D2AgbbEqcg==
+  version "2.22.2"
+  resolved "https://registry.yarnpkg.com/zodiac-roles-sdk/-/zodiac-roles-sdk-2.22.2.tgz#cbc7d68fb60a538f8430f11d35d71f13dcacf01c"
+  integrity sha512-4GyMka+c4VaP1GmOopfmFwN0muxkRSZs/y6cqldt2eL6dB7wibGRm/Rhph7bY+OielnWKzVyMjSHi/hY1oscvg==
   dependencies:
     ethers "^6.13.5"
     zodiac-roles-deployments "^2.5.0"

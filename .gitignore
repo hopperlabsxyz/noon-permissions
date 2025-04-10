@@ -1,5 +1,12 @@
 .DS_Store
+output/
 
 /node_modules
 /build
-/.lib/eth-sdk/tmp
+
+dependencies/
+
+cache/
+out/
+
+test/**/permissions.json
