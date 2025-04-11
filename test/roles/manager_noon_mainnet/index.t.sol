@@ -17,7 +17,7 @@ contract ManagerNoonMainnet is BaseTest {
         avatar = 0xA766CdA5848FfD7D33cE3861f6dc0A5EE38f3550;
         role = IRoles(0xf2BeE2B441ACF54204c25086792Cc94a04193089);
         roleOwner = avatar;
-        manager = address(0xdead); // tmp while waiting for addresses from Lars
+        manager = address(0xF53eAeB7e6f15CBb6dB990eaf2A26702e1D986d8);
         ROLE_KEY = "manager_noon_mainnet";
 
         bytes[] memory permissions = parsePermissions(
