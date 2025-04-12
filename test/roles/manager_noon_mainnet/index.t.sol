@@ -78,6 +78,14 @@ contract ManagerNoonMainnet is BaseTest {
         role.execTransactionWithRole(TARGET, 0, data, 0, ROLE_KEY, false);
     }
 
+    function test_initiateClosing() public {
+        bytes memory data = abi.encodeWithSelector(
+            Vault(TARGET).initiateClosing.selector
+        );
+        vm.prank(manager);
+        role.execTransactionWithRole(TARGET, 0, data, 0, ROLE_KEY, false);
+    }
+
     function test_deposit() public {
         bytes memory data = abi.encodeWithSignature(
             "deposit(uint256,address)",
