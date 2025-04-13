@@ -25,6 +25,10 @@ export default [
     ...allow.mainnet.lagoon.vault.initiateClosing(),
     targetAddress: VAULT_TACUSN,
   },
+  {
+    ...allow.mainnet.lagoon.vault.claimSharesOnBehalf(),
+    targetAddress: VAULT_TACUSN,
+  },
   // stake usn into susn
   ...allowErc20Approve([USN], [sUSN]),
   allow.mainnet.noon.susn.deposit(undefined, c.avatar),
