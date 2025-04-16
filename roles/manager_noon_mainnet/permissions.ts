@@ -6,6 +6,8 @@ const USDT = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
 const sUSN = "0xE24a3DC889621612422A64E6388927901608B91D";
 const USN = "0xdA67B4284609d2d48e5d10cfAc411572727dc1eD";
 
+const WITHDRAW_HANDLER = "0x0DaBc0D9B270c9B0C4C77AaCeAa712b56D0F9178";
+
 export default [
   // vault wind/uwind
   ...allowErc20Approve([USDT], [VAULT_TACUSN]), // manage approval for redemption from safe to vault
@@ -32,4 +34,8 @@ export default [
   // stake usn into susn
   ...allowErc20Approve([USN], [sUSN]),
   allow.mainnet.noon.susn.deposit(undefined, c.avatar),
+  // withdraw susn
+  allow.mainnet.noon.susn.withdraw(undefined, WITHDRAW_HANDLER, c.avatar),
+  // claim withdrawal
+  allow.mainnet.noon.withdrawalhandler.claimWithdrawal(undefined),
 ] satisfies Permissions;

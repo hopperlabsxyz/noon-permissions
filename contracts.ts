@@ -7,6 +7,7 @@ export default {
     },
     noon: {
       susn: "0xE24a3DC889621612422A64E6388927901608B91D",
+      withdrawalhandler: "0x0DaBc0D9B270c9B0C4C77AaCeAa712b56D0F9178",
     },
   },
 } satisfies Contracts;
