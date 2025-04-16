@@ -6,7 +6,7 @@ import {TestAvatar} from "@test/TestAvatar.sol";
 import {Vault} from "@test/interfaces/IVault.sol";
 import "@forge-std/Test.sol";
 
-address constant TARGET = 0x4439307396c998258d55349b90abd2177289118d; // tacUSN
+address constant TARGET = 0x7895A046b26CC07272B022a0C9BAFC046E6F6396; // tacUSN
 address constant ASSET = 0xdAC17F958D2ee523a2206206994597C13D831ec7; // USDT
 
 address constant sUSN = 0xE24a3DC889621612422A64E6388927901608B91D;
@@ -17,7 +17,8 @@ contract ManagerNoonMainnet is BaseTest {
         avatar = 0xA766CdA5848FfD7D33cE3861f6dc0A5EE38f3550;
         role = IRoles(0xf2BeE2B441ACF54204c25086792Cc94a04193089);
         roleOwner = avatar;
-        manager = address(0xF53eAeB7e6f15CBb6dB990eaf2A26702e1D986d8);
+        // member of the role
+        manager = address(0x7c615e12D1163fc0DdDAA01B51922587034F5C93);
         ROLE_KEY = "manager_noon_mainnet";
 
         bytes[] memory permissions = parsePermissions(
