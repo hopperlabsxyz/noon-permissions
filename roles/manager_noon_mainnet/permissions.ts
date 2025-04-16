@@ -8,6 +8,8 @@ const sUSN = "0xE24a3DC889621612422A64E6388927901608B91D";
 const USN = "0xdA67B4284609d2d48e5d10cfAc411572727dc1eD";
 
 const WITHDRAW_HANDLER = "0x0DaBc0D9B270c9B0C4C77AaCeAa712b56D0F9178";
+
+// Bunni hub address
 const BUNNI_HUB = "0x000000DCeb71f3107909b1b748424349bfde5493";
 
 // Bunni pool key for USDT/USN
@@ -18,8 +20,6 @@ const BUNNI_POOL_KEY_USDT_USN = {
   tickSpacing: 10,
   hooks: "0x0000fE59823933AC763611a69c88F91d45F81888"
 };
-
-
 
 export default [
   // vault wind/uwind
@@ -45,17 +45,17 @@ export default [
     targetAddress: VAULT_TACUSN,
   },
   // stake usn into susn
+  ...allowErc20Approve([USN], [sUSN]),
   allow.mainnet.noon.susn.deposit(undefined, c.avatar),
   // withdraw susn
   allow.mainnet.noon.susn.withdraw(undefined, WITHDRAW_HANDLER, c.avatar),
   // claim withdrawal
   allow.mainnet.noon.withdrawalhandler.claimWithdrawal(undefined),
-  // Bunni hub permissions
 
-  // HUB APPROVAL
+  // bunni hub approval
   ...allowErc20Approve([USN], [BUNNI_HUB]),
   ...allowErc20Approve([USDT], [BUNNI_HUB]),
-  // HUB DEPOSIT/WITHDRAW
+  // bunni hub deposit/withdraw
   allow.mainnet.bunni.hub.deposit({
     poolKey: BUNNI_POOL_KEY_USDT_USN,
     recipient: c.avatar,
@@ -73,5 +73,9 @@ export default [
     amount1Min: undefined,
     deadline: undefined
   }),
+
+  // euler connector batch
+  allow.mainnet.euler.connector.batch(undefined),
+
 
 ] satisfies Permissions;

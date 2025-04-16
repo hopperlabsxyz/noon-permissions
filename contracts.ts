@@ -11,6 +11,9 @@ export default {
     },
     bunni: {
         hub: "0x000000DCeb71f3107909b1b748424349bfde5493",
-      }
+      },
+    euler: {
+      connector: "0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383",
+    },
   },
 } satisfies Contracts;
