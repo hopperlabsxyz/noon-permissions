@@ -1,5 +1,5 @@
 import { allowErc20Approve } from "../../lib/conditions";
-import { forAll, c } from "zodiac-roles-sdk";
+import { c } from "zodiac-roles-sdk";
 
 const VAULT_TACUSN = "0x7895a046b26cc07272b022a0c9bafc046e6f6396";
 const USDT = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
