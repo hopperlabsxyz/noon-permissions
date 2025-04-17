@@ -53,8 +53,7 @@ export default [
   allow.mainnet.noon.withdrawalhandler.claimWithdrawal(undefined),
 
   // bunni hub approval
-  ...allowErc20Approve([USN], [BUNNI_HUB]),
-  ...allowErc20Approve([USDT], [BUNNI_HUB]),
+  ...allowErc20Approve([USN, USDT], [BUNNI_HUB]),
 
   // euler connector batch
   allow.mainnet.euler.connector.batch(undefined),
