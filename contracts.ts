@@ -7,6 +7,13 @@ export default {
     },
     noon: {
       susn: "0xE24a3DC889621612422A64E6388927901608B91D",
+      withdrawalhandler: "0x0DaBc0D9B270c9B0C4C77AaCeAa712b56D0F9178",
+    },
+    bunni: {
+        hub: "0x000000DCeb71f3107909b1b748424349bfde5493",
+      },
+    euler: {
+      connector: "0x0C9a3dd6b8F28529d72d7f9cE918D493519EE383",
     },
   },
 } satisfies Contracts;
