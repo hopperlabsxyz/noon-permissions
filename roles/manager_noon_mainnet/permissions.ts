@@ -1,16 +1,16 @@
 import { allowErc20Approve } from "../../lib/conditions";
 import { c } from "zodiac-roles-sdk";
+import contracts from "../../contracts";
 
 const VAULT_TACUSN = "0x7895a046b26cc07272b022a0c9bafc046e6f6396";
 const USDT = "0xdAC17F958D2ee523a2206206994597C13D831ec7";
 
-const sUSN = "0xE24a3DC889621612422A64E6388927901608B91D";
+const sUSN = contracts.mainnet.noon.susn;
 const USN = "0xdA67B4284609d2d48e5d10cfAc411572727dc1eD";
 
-const WITHDRAW_HANDLER = "0x0DaBc0D9B270c9B0C4C77AaCeAa712b56D0F9178";
-
-// Bunni hub address
-const BUNNI_HUB = "0x000000DCeb71f3107909b1b748424349bfde5493";
+const WITHDRAW_HANDLER = contracts.mainnet.noon.withdrawalhandler;
+const BUNNI_HUB = contracts.mainnet.bunni.hub;
+const EULER_CONNECTOR = contracts.mainnet.euler.connector;
 
 // Bunni pool key for USDT/USN
 const BUNNI_POOL_KEY_USDT_USN = {
@@ -55,27 +55,8 @@ export default [
   // bunni hub approval
   ...allowErc20Approve([USN], [BUNNI_HUB]),
   ...allowErc20Approve([USDT], [BUNNI_HUB]),
-  // bunni hub deposit/withdraw
-  allow.mainnet.bunni.hub.deposit({
-    poolKey: BUNNI_POOL_KEY_USDT_USN,
-    recipient: c.avatar,
-    amount0Desired: undefined,
-    amount1Desired: undefined,
-    amount0Min: undefined,
-    amount1Min: undefined,
-    deadline: undefined
-  }),
-  allow.mainnet.bunni.hub.withdraw({
-    poolKey: BUNNI_POOL_KEY_USDT_USN,
-    recipient: c.avatar,
-    shares: undefined,
-    amount0Min: undefined,
-    amount1Min: undefined,
-    deadline: undefined
-  }),
 
   // euler connector batch
   allow.mainnet.euler.connector.batch(undefined),
-
 
 ] satisfies Permissions;
